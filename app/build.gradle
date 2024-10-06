@@ -47,3 +47,16 @@ tasks.register("copyTask", Copy) {
     into("target")
     include("*.war")
 }
+
+tasks.register("hello") {
+    doLast {
+        println('Hello!')
+    }
+}
+
+tasks.register("greet") {
+    doLast {
+        println('How are you?')
+    }
+    dependsOn("hello")
+}
