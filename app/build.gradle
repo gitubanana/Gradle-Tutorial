@@ -61,3 +61,15 @@ tasks.register("greet") {
     }
     dependsOn("hello")
 }
+
+publishing {
+    publications {
+        create("maven", MavenPublication) {
+            groupId = "com.gradle.tutorial"
+            artifactId = "tutorial"
+            version = "1.0"
+
+            from(components["java"])
+        }
+    }
+}
